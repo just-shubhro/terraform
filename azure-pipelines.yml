@@ -2,26 +2,26 @@ trigger:
 - main
 
 pool:
-  name: Azure Pipelines
-  vmImage: 'vs2017-win2016'
+  vmImage: 'ubuntu-latest'
 
+steps:
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   displayName: 'Terraform : INIT'
   inputs:
     backendServiceArm: 'shubhrohore123'
     backendAzureRmResourceGroupName: 'rg-shubhro-ind'
-    backendAzureRmStorageAccountName: shubhro12
-    backendAzureRmContainerName: tfstate
+    backendAzureRmStorageAccountName: 'shubhro12'
+    backendAzureRmContainerName: 'tfstate'
     backendAzureRmKey: 'PPXeE+Sp2YsaeFg6I/WXoXl+m4YXNt8zCHl3vcj5jpETERf1mp1mnxvshKJsXgyHNUs9SvFvNmkj+AStzs5iUA=='
 
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   displayName: 'Terraform : PLAN'
   inputs:
-    command: plan
+    command: 'plan'
     environmentServiceNameAzureRM: 'shubhrohore123'
 
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   displayName: 'Terraform : VAL & APPLY'
   inputs:
-    command: apply
+    command: 'apply'
     environmentServiceNameAzureRM: 'shubhrohore123'
