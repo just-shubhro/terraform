@@ -20,7 +20,6 @@ provider "azurerm" {
     }
   }
 }
-data "azurerm_client_config" "current" {}
 
 # Create our Virtual Network - Jonnychipz-VNET
 resource "azurerm_virtual_network" "vnet" {
