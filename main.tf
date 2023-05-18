@@ -3,6 +3,7 @@ terraform {
     resource_group_name   = "rg-shubhro-ind"
     storage_account_name  = "shubhro12"
     container_name        = "tfstate"
+    key = "provide-testing"
 
 }
   required_providers {
