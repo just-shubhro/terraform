@@ -14,14 +14,6 @@ terraform {
     }
   }
 }
-provider "azurerm" {
-  features {
-      key_vault {
-      purge_soft_delete_on_destroy = true
-    }
-  }
-}
-
 # Create our Virtual Network - Jonnychipz-VNET
 resource "azurerm_virtual_network" "vnet" {
   name                = "jonnychipzvnet"
